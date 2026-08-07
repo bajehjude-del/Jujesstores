@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jujes Stores — Loaded Fries, Burgers, Shawarma & Native Drinks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">JS</span>
+      <span class="brand-name">Jujes<em>Stores</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#drinks">Drinks</a>
+      <a href="#art">Art Corner</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <button class="cart-btn" id="cartToggle" aria-label="Open cart">
+      <span class="cart-icon">🧾</span>
+      <span>Order</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-blob hero-blob--one"></div>
+  <div class="hero-blob hero-blob--two"></div>
+
+  <div class="hero-inner">
+    <p class="eyebrow">Hot off the grill · Kaduna, Nigeria</p>
+    <h1 class="hero-title">
+      WELCOME TO<br>
+      JUJES STORES<br>
+    </h1>
+    <div class="hero-cta">
+      <a href="#menu" class="btn btn--primary">See the menu</a>
+      <a href="#art" class="btn btn--ghost">We also sell art →</a>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>SUYA LOADED FRIES</span><span>·</span>
+      <span>CHICKEN SHAWARMA</span><span>·</span>
+      <span>KUNU ZAKI</span><span>·</span>
+      <span>ZOBO GINGER PINEAPPLE</span><span>·</span>
+      <span>DOUBLE BEEF BURGER</span><span>·</span>
+      <span>SUYA LOADED FRIES</span><span>·</span>
+      <span>CHICKEN SHAWARMA</span><span>·</span>
+      <span>KUNU ZAKI</span><span>·</span>
+      <span>ZOBO GINGER PINEAPPLE</span><span>·</span>
+      <span>DOUBLE BEEF BURGER</span><span>·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="section" id="menu">
+  <div class="section-head reveal">
+    <p class="section-label">On the grill</p>
+    <h2>Loaded Fries, Burgers &amp; Shawarma</h2>
+    <p class="section-desc">Every order built fresh, wrapped hot, ready in minutes.</p>
+  </div>
+
+  <div class="card-grid" id="foodGrid">
+    <!-- Cards injected by script.js from MENU data, but static markup below for no-JS fallback and SEO -->
+  </div>
+</section>
+
+<!-- ============ DRINKS ============ -->
+<section class="section section--drinks" id="drinks">
+  <div class="section-head reveal">
+    <p class="section-label">Native &amp; nostalgic</p>
+    <h2>Kunu &amp; Zobo</h2>
+    <p class="section-desc">No concentrate, no shortcuts — ground, boiled and chilled the traditional way.</p>
+  </div>
+
+  <div class="card-grid" id="drinkGrid"></div>
+</section>
+
+<!-- ============ ART STRIP (informational only, no ordering) ============ -->
+<section class="art" id="art">
+  <div class="art-inner reveal">
+    <div class="art-text">
+      <p class="section-label section-label--light">03 — Beyond the menu</p>
+      <h2>We also sell original art.</h2>
+      <p>Paintings, prints and handmade pieces from local Nigerian artists hang right in the store. It's not something you can add to a delivery order — come see it, ask about a piece, and take one home in person.</p>
+      <a href="#visit" class="btn btn--outline-light">Visit the store to see the collection</a>
+    </div>
+    <div class="art-frames" aria-hidden="true">
+      <span class="frame frame--1"></span>
+      <span class="frame frame--2"></span>
+      <span class="frame frame--3"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / FOOTER ============ -->
+<footer class="footer" id="visit">
+  <div class="footer-inner">
+    <div>
+      <span class="brand-mark brand-mark--light">JS</span>
+      <h3>Jujes Stores</h3>
+      <p>No.22 NACB QUARTERS NARAYI HIGHCOST,<br>Kaduna Nigeria</p>
+      <p>Open daily · 10am – 11pm</p>
+    </div>
+    <div>
+      <h4>Order &amp; contact</h4>
+      <p>Tap "Order" to build your cart, then send it straight to us on WhatsApp — 08028907611.</p>
+      <a href="#top" class="btn btn--primary btn--small" id="footerOrderBtn">Start an order</a>
+    </div>
+  </div>
+  <p class="footer-fine">© <span id="year"></span> Jujes Stores. Made with pepper &amp; patience.</p>
+</footer>
+
+<!-- ============ CART DRAWER (receipt style) ============ -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Your order">
+  <div class="receipt">
+    <div class="receipt-head">
+      <h3>Jujes Stores</h3>
+      <p>Order Slip</p>
+      <button class="drawer-close" id="drawerClose" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="receipt-line receipt-line--head">
+      <span>ITEM</span><span>QTY</span><span>PRICE</span>
+    </div>
+
+    <div class="receipt-items" id="receiptItems">
+      <p class="receipt-empty" id="receiptEmpty">Your order is empty.<br>Add something delicious →</p>
+    </div>
+
+    <div class="receipt-total">
+      <span>TOTAL</span>
+      <span id="receiptTotal">₦0</span>
+    </div>
+
+    <form class="order-form" id="orderForm">
+      <label>Name
+        <input type="text" name="name" placeholder="Stellamaris" required>
+      </label>
+      <label>Phone
+        <input type="tel" name="phone" placeholder="08028907611" required>
+      </label>
+      <label>Delivery or pickup?
+        <select name="mode">
+          <option value="Delivery">Delivery</option>
+          <option value="Pickup">Pickup</option>
+        </select>
+      </label>
+      <label id="addressLabel">Address
+        <input type="text" name="address" placeholder="Where should we deliver?">
+      </label>
+      <button type="submit" class="btn btn--primary btn--full">Send order on WhatsApp</button>
+    </form>
+    <p class="receipt-perf" aria-hidden="true"></p>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script src="store.js"></script>
+</body>
+</html>
