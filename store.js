@@ -5,7 +5,7 @@
    ============================================================ */
 
 // ---- Store contact: replace with the real WhatsApp number (country code, no + or spaces) ----
-const WHATSAPP_NUMBER = "2348030000000";
+const WHATSAPP_NUMBER = "2349055279686";
 
 // ---- Menu data ----
 const FOOD_ITEMS = [
